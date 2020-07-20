@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-physics-system@1.4.0/dist/aframe-physics-system.min.js"></script>
+    <script src=></script>
+  </head>
+  <body>
+    <!-- <a-scene>
+      <a-box
+        color="green"
+        width="2"
+        height="2"
+        depth="2"
+        animation="property: position; to: 1 8 -10; dur: 1000; easing: linear;  loop: true"
+        color="tomato"
+      ></a-box>
+      <a-entity text="value: HELLO" color="red" position="0 1 -1"></a-entity>
+    </a-scene> -->
+    <a-scene background="color: #ECECEC">
+      <a-assets>
+        <a-asset-item id="cityModel" src="https://cdn.jsdelivr.net/gh/ckmonish2000/assets/scene.gltf"></a-asset-item>
+      </a-assets>
+      <a-entity gltf-model="#cityModel" position="0 1.5 -5"></a-entity>
+    </a-scene>
+  </body>
+</html>
+
+
