@@ -58,6 +58,7 @@ def page(id):
 	repo=x[3]
 	path=x[4]
 	cdn=f"https://cdn.jsdelivr.net/gh/{username}/{repo}{path}"
+	print(cdn)
 	return render_template(f'index.html',s=cdn)
 
 
@@ -69,8 +70,8 @@ def page(id):
 @app.route("/delete/<int:id>")
 def delete(id):
 	conn=engine.connect()
-	del=models.delete().where(models.c.id==id)
-	conn.execute(del)
+	dele=models.delete().where(models.c.id==id)
+	conn.execute(dele)
 	return redirect(url_for("model"))
 
 
