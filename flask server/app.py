@@ -31,7 +31,7 @@ def upload():
 		repo=request.form["repo"],path=request.form["path"],modelExtens=request.form["exten"])
 		conn.execute(ins)
 
-		return redirect(url_for("index"))
+		return redirect(url_for("model"))
 	return render_template("upload.html")
 
 
