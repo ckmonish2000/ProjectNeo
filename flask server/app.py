@@ -36,12 +36,13 @@ def upload():
 
 
 
+
 @app.route("/models")
 def model():
 	conn=engine.connect()
 	sel=models.select()
 	res=conn.execute(sel)
-	
+
 	return render_template("view.html",data=res)
 
 @app.route("/webvr/<int:id>")
@@ -60,10 +61,20 @@ def page(id):
 	return render_template(f'index.html',s=cdn)
 
 
-#
+#hardcoded values
 # username="ckmonish2000"
 # repo="assets"
 # path="/scene.gltf"
+
+@app.route("/delete/<int:id>")
+def delete(id):
+	conn=engine.connect()
+	del=models.delete().where(models.c.id==id)
+	conn.execute(del)
+	return redirect(url_for("model"))
+
+
+
 
 
 if __name__=="__main__":
