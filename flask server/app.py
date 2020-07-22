@@ -41,7 +41,7 @@ def model():
 	conn=engine.connect()
 	sel=models.select()
 	res=conn.execute(sel)
-	print(res)
+	
 	return render_template("view.html",data=res)
 
 @app.route("/webvr/<int:id>")

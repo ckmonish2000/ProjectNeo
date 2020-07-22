@@ -4,10 +4,10 @@
 {%block title%}List of Models{%endblock%}
 
 {%block body%}
-<ul>
+<ol>
 {%for i in data%}
-<li>{{i[1]}}</li>
+<a href="/webvr/{{i[0]}}"><li>{{i[1]}}</li></a>
 {%endfor%}
-</ul>
+</ol>
 
 {%endblock%}
