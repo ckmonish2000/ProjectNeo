@@ -4,10 +4,16 @@
 {%block title%}List of Models{%endblock%}
 
 {%block body%}
-<ol>
+
+
+
 {%for i in data%}
-<a href="/webvr/{{i[0]}}"><li>{{i[1]}}</li></a>
+<div class="items">
+<a href="/webvr/{{i[0]}}" class="txt"><h2 >{{i[1]}} </h2></a>
+<button type="button" name="button" class="del"><a href="/delete/{{i[0]}}" class="abtn" >x</a></button>
+</div>
 {%endfor%}
-</ol>
+
+
 
 {%endblock%}
