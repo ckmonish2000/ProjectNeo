@@ -1,0 +1,57 @@
+{%extends "base.html"%}
+
+{%block title%}Upload{%endblock%}
+
+{%block body%}
+
+
+<br>
+<h1 style="margin:20px;">Upload Model</h1>
+<div class="frm-parent">
+
+  <form action="/upload/" method="POST">
+    <div class="form-group">
+      <label >Model Name:</label>
+      <input class="form-control" name="modelname" placeholder="Model Name">
+    </div>
+
+    <div class="form-group">
+      <label >Username:</label>
+      <input class="form-control" name="gitUserName" placeholder="Github Username ">
+    </div>
+
+    <div class="form-group">
+      <label >Repository:</label>
+      <input class="form-control"name="repo" placeholder="Git Repository">
+    </div>
+
+    <div class="form-group">
+      <label >Path:</label>
+      <input class="form-control" name="path" placeholder="path in Git repo">
+    </div>
+
+    <div class="form-group">
+      <label >Extension:</label>
+      <input class="form-control" name="exten" placeholder="Model Type">
+    </div>
+
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form>
+
+</div>
+
+
+{%endblock%}
+
+
+
+
+
+<!-- <form class="frm" action="/upload/" method="post" class="form-group">
+  <input type="text" name="modelname" placeholder="Model Name" class="form-group">
+  <input type="text" name="gitUserName" placeholder="Github Username ">
+  <input type="text" name="repo" placeholder="Git Repository">
+  <input type="text" name="path" placeholder="path in Git repo">
+  <input type="text" name="exten" placeholder="Model Type">
+  <input type="submit" >
+</form> -->

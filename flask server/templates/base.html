@@ -1,0 +1,118 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-physics-system@1.4.0/dist/aframe-physics-system.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>{%block title%}{%endblock%}</title>
+    <style media="screen">
+      a {
+
+    text-decoration: none;
+}
+
+.card{
+  height:200px;
+  width:200px;
+  padding:20px;
+  border:2px solid black;
+  border-radius:20px;
+  margin:20px;
+}
+.parent{
+  display :flex;
+  flex-wrap:wrap;
+}
+
+      .items{
+        border:2px solid black;
+        border-radius:30px;
+        display:flex;
+        flex-direction:row;
+        width:200px;
+        margin:20px;
+        margin-left:auto;
+        margin-right:auto;
+        justify-content:center
+        flex-wrap:wrap;
+      }
+
+
+.del{
+  width:28;
+  height:28;
+  margin:20px;
+  margin-top:auto;
+  margin-bottom:auto;
+  background:#d11a2a;
+  color:#fff;
+  text-decoration:none;
+  cursor:pointer;
+  border-radius:10px;
+}
+.del:hover{
+  box-shadow:2px 2px 3px black;
+  border-radius:20px;
+
+  background:#f08e78;
+}
+.items:hover{
+  box-shadow:2px 2px 3px black;
+  border-radius:20px;
+  width:200px;
+  transition: width 2s;
+
+}
+
+.txt{
+  text-decoration:none;
+  cursor:pointer;
+  margin:auto;
+  color:black
+
+}
+.abtn{
+  color:white
+}
+.frm-parent{
+  padding:20px;
+}
+.txt-cont{
+  display:flex;
+
+
+}
+
+.des-txt{
+  padding:10px;
+}
+.card:hover{
+  box-shadow:3px 3px 4px black;
+
+}
+.lst{
+  margin-bottom:3px;
+}
+    </style>
+  </head>
+  <body>
+    <div class="navbar navbar-expand-lg navbar-light bg-light">
+    <a href="/"  class="navbar-brand">Neo</a>
+
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/" >Neo</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li ><a href="/models">VR-Models</a></li>
+          <li ><a href="/upload">Upload</a></li>
+
+        </ul>
+      </div>
+    </nav>
+  {%block body%}
+  {%endblock%}
+  </body>
+</html>
