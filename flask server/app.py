@@ -44,10 +44,10 @@ def model():
 	print(res)
 	return render_template("view.html",data=res)
 
-@app.route("/webvr/")
-def page():
+@app.route("/webvr/<int:id>")
+def page(id):
 	conn=engine.connect()
-	sel=models.select().where(models.c.id==1)
+	sel=models.select().where(models.c.id==id)
 	res=conn.execute(sel)
 	for i in res:
 		print(i)
