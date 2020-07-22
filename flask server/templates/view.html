@@ -1,0 +1,13 @@
+{%extends "base.html"%}
+
+
+{%block title%}List of Models{%endblock%}
+
+{%block body%}
+<ul>
+{%for i in data%}
+<li>{{i[1]}}</li>
+{%endfor%}
+</ul>
+
+{%endblock%}

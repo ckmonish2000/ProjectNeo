@@ -1,0 +1,15 @@
+{%extends "base.html"%}
+
+
+{%block body%}
+<h1>upload Model</h1>
+<form class="frm" action="/upload/" method="post">
+  <input type="text" name="modelname" placeholder="Model Name">
+  <input type="text" name="gitUserName" placeholder="Github Username ">
+  <input type="text" name="repo" placeholder="Git Repository">
+  <input type="text" name="path" placeholder="path in Git repo">
+  <input type="text" name="exten" placeholder="Model Type">
+  <input type="submit" >
+</form>
+
+{%endblock%}
