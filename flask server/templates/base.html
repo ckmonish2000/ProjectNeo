@@ -2,6 +2,9 @@
   <head>
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-physics-system@1.4.0/dist/aframe-physics-system.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>{%block title%}{%endblock%}</title>
     <style media="screen">
       a {
@@ -9,6 +12,17 @@
     text-decoration: none;
 }
 
+.card{
+  height:200px;
+  width:200px;
+  padding:20px;
+  border:2px solid black;
+  border-radius:20px;
+  margin:20px;
+}
+.parent{
+  display :flex;
+}
 
       .items{
         border:2px solid black;
@@ -20,9 +34,7 @@
         margin-left:auto;
         margin-right:auto;
         justify-content:center
-
-
-
+        flex-wrap:wrap;
       }
 
 
@@ -65,6 +77,21 @@
     </style>
   </head>
   <body>
+    <div class="navbar navbar-expand-lg navbar-light bg-light">
+    <a href="/"  class="navbar-brand">Neo</a>
+
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/" >Neo</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li ><a href="/models">Models</a></li>
+          <li ><a href="/upload">Upload</a></li>
+
+        </ul>
+      </div>
+    </nav>
   {%block body%}
   {%endblock%}
   </body>
