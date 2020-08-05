@@ -1,0 +1,13 @@
+{%extends "vrbase.html"%}
+
+
+
+
+{%block body%}
+<a-scene background="color: #ECECEC">
+  <a-assets>
+    <a-asset-item id="Model" src="{{s}}"></a-asset-item>
+  </a-assets>
+  <a-entity gltf-model="#Model" position="0 1.5 -5"></a-entity>
+</a-scene>
+{%endblock%}

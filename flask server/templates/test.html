@@ -1,0 +1,56 @@
+{%extends "base.html"%}
+
+{%block title%}Neo{%endblock%}
+
+{%block body%}
+
+<div class="container">
+  <div class="jumbotron">
+    <h1>Welcome To Project-Neo</h1>
+    <p>Project-Neo is a one stop solution for instant 3D Model rendering in Vr and Ar.</p>
+  </div>
+
+<h3>Built Using</h3>
+  <div class="txt-cont">
+    <div class="des-txt">
+      <h4><a href="https://aframe.io">Aframe</a></h4>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/9/92/A-Frame_logo.png" alt="aframe" height="200">
+      <p>A-Frame is a web framework for building virtual reality (VR) experiences. A-Frame is based on top of HTML, making it simple to get started. But A-Frame is not just a 3D scene graph or a markup language; the core is a powerful entity-component framework that provides a declarative, extensible, and composable structure to three.js.</p>
+    </div>
+
+    <div class="des-txt">
+      <h4><a href="https://www.jsdelivr.com/">jsDelivr</a></h4>
+      <img src="https://img.stackshare.io/service/2554/6191378.png" alt="jsdelivr">
+      <p>JSDelivr is a free public CDN for open-source projects. It can serve web files directly from the npm registry and GitHub repositories without any configuration. It is currently the 2nd most popular public CDN that hosts multiple projects. </p>
+    </div>
+
+    <div class="des-txt">
+      <h4><a href="https://flask.palletsprojects.com/en/1.1.x/">Flask</a></h4>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTTUFAZYGGk0Vun20mSoTVCKpnruyk5mUTO7g&usqp=CAU" alt="flask" height="200">
+      <p>Flask is a micro web framework written in Python. It is classified as a microframework because it does not require particular tools or libraries. It has no database abstraction layer, form validation, or any other components where pre-existing third-party libraries provide common functions. </p>
+    </div>
+
+  </div>
+
+<h3>How To Use Neo</h3>
+<br>
+
+<ul>
+  <li class="lst">Upload the model files on GitHub. (primaryly .glft Models)</li>
+  <li class="lst">Go to the <a href="/upload">upload</a> section of Neo. </li>
+  <li class="lst">Give in a model name.</li>
+  <li class="lst">Enter the Github username where your assets are stored.</li>
+  <li class="lst">Enter the Github repositorie where your assets are stored</li>
+  <li class="lst">Enter the path to the file from the repositorie.</li>
+  <li class="lst">Enter the model type.</li>
+  <li class="lst">And your good to <a href="/models">go.</a></li>
+</ul>
+
+
+
+</div>
+
+
+
+
+{%endblock%}
