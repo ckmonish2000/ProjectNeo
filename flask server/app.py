@@ -31,7 +31,7 @@ def upload():
 		repo=request.form["repo"],path=request.form["path"],modelExtens=request.form["exten"])
 		conn.execute(ins)
 
-		return redirect(url_for("model"))
+		return redirect(url_for("index"))
 	return render_template("upload.html")
 
 
@@ -97,12 +97,15 @@ def arpage(id):
 # repo="assets"
 # path="/scene.gltf"
 
-@app.route("/delete/<int:id>")
-def delete(id):
+@app.route("/delete/<vue>/<int:id>")
+def delete(id,vue):
 	conn=engine.connect()
 	dele=models.delete().where(models.c.id==id)
 	conn.execute(dele)
-	return redirect(url_for("model"))
+	if(vue=="vr"):
+		return redirect(url_for("vrmodel"))
+	else:
+		return redirect(url_for("armodel"))
 
 
 
