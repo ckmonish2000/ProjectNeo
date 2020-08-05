@@ -1,8 +1,9 @@
 # Welcome To Project-Neo
 
-Project-Neo is a one stop solution for instant 3D Model rendering in Vr and Ar.
+Project-Neo is a open-source tool for rapid VR and AR prototyping
 
 - [V1 live demo](https://neov1.herokuapp.com/)
+- [V2 live demo](https://neov2.herokuapp.com/)
 
 ## V1 Built Using
 
@@ -11,6 +12,10 @@ Project-Neo is a one stop solution for instant 3D Model rendering in Vr and Ar.
 - [A-frame](https://aframe.io)
 - [jsDelivr](https://www.jsdelivr.com)
 - [Flask](https://flask.palletsprojects.com)
+
+## V2 Built Using
+- The Above Mentioned Frameworks
+-[AR.js](https://ar-js-org.github.io/AR.js-Docs/)
 
 ### How To Use Neo V1
 
@@ -32,3 +37,11 @@ Project-Neo is a one stop solution for instant 3D Model rendering in Vr and Ar.
 - Enter the path to the file from the repositorie.
 - Enter the model type.
 - And your good to go.
+
+### How To Use Neo-AR
+- Go to Ar-model
+- Select any model
+- Allow camera access
+- and display the below image infront of the camera.
+
+![alt text](https://upload.wikimedia.org/wikipedia/commons/4/48/Hiro_marker_ARjs.png)
