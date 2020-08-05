@@ -1,0 +1,34 @@
+{%extends "base.html"%}
+
+
+{%block title%}Vr-Models{%endblock%}
+
+{%block body%}
+<!-- navbar -->
+
+<!-- navbar end -->
+
+<div class="parent">
+
+
+{%for i in data%}
+<div class="card" >
+  <div class="card-body">
+
+    <h2 class="card-title"><a href="/webar/{{i[0]}}" class="txt" target="_blank">{{i[1]}}</a></h2>
+
+    <a href="/delete/{{i[0]}}" class="btn btn-danger">delete</a>
+  </div>
+</div>
+{%endfor%}
+
+</div>
+
+{%endblock%}
+
+
+
+<!-- <div class="items">
+<a href="/webvr/{{i[0]}}" class="txt"><h2 >{{i[1]}} </h2></a>
+<button type="button" name="button" class="del"><a href="/delete/{{i[0]}}" class="abtn" >x</a></button>
+</div> -->
