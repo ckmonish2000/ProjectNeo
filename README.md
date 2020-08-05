@@ -13,9 +13,8 @@ Project-Neo is a open-source tool for rapid VR and AR prototyping
 - [jsDelivr](https://www.jsdelivr.com)
 - [Flask](https://flask.palletsprojects.com)
 
-## V2 Built Using
-- The Above Mentioned Frameworks
--[AR.js](https://ar-js-org.github.io/AR.js-Docs/)
+## Additional tools used in V2 
+- [AR.js](https://ar-js-org.github.io/AR.js-Docs/)
 
 ### How To Use Neo V1
 
