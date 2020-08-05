@@ -37,16 +37,17 @@ def upload():
 
 
 
-@app.route("/models")
-def model():
+@app.route("/vr-models")
+def vrmodel():
 	conn=engine.connect()
 	sel=models.select()
 	res=conn.execute(sel)
 
 	return render_template("view.html",data=res)
 
+
 @app.route("/webvr/<int:id>")
-def page(id):
+def vrpage(id):
 	conn=engine.connect()
 	sel=models.select().where(models.c.id==id)
 	res=conn.execute(sel)
@@ -60,6 +61,35 @@ def page(id):
 	cdn=f"https://cdn.jsdelivr.net/gh/{username}/{repo}{path}"
 	print(cdn)
 	return render_template(f'index.html',s=cdn)
+
+
+
+@app.route("/ar-models")
+def armodel():
+	conn=engine.connect()
+	sel=models.select()
+	res=conn.execute(sel)
+
+	return render_template("arview.html",data=res)
+
+@app.route("/webar/<int:id>")
+def arpage(id):
+	conn=engine.connect()
+	sel=models.select().where(models.c.id==id)
+	res=conn.execute(sel)
+	for i in res:
+		print(i)
+		x=i
+
+	username=x[2]
+	repo=x[3]
+	path=x[4]
+	cdn=f"https://cdn.jsdelivr.net/gh/{username}/{repo}{path}"
+	print(cdn)
+	return render_template(f'ar.html',s=cdn)
+
+
+
 
 
 #hardcoded values
