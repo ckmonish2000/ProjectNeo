@@ -21,7 +21,7 @@ Column("modelExtens",String)
 meta.create_all(engine)
 
 class Models(graphene.ObjectType):
-	id=graphene.Int()
+	id=graphene.Int(required=False)
 	modelName=graphene.String()
 	username=graphene.String()
 	repo=graphene.String()
@@ -42,7 +42,29 @@ class Query(graphene.ObjectType):
 		return lst
 
 
-schema=graphene.Schema(query=Query)
+class CreateModel(graphene.Mutation):
+	class Arguments:
+		modelName=graphene.String()
+		username=graphene.String()
+		repo=graphene.String()
+		path=graphene.String()
+		modelexe=graphene.String()
+	
+	ok=graphene.Boolean()
+	create_model=graphene.Field(Models)
+
+	def mutate(root,info,modelName,username,repo,path,modelexe):
+		conn=engine.connect()
+		ins=models.insert().values(modelName=modelName,username=username,repo=repo,path=path,modelExtens=modelexe)
+		conn.execute(ins)
+		create_model=Models(modelName=modelName,username=username,repo=repo,path=path,modelexe=modelexe)
+		return CreateModel(ok=True,create_model=create_model)
+
+
+class Mutations(graphene.ObjectType):
+	createModel=CreateModel.Field()
+
+schema=graphene.Schema(query=Query,mutation=Mutations)
 
 result=schema.execute('''
 {
