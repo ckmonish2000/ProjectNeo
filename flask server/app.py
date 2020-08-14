@@ -1,6 +1,8 @@
 from flask import Flask,render_template,url_for,request,redirect
 from sqlalchemy import create_engine,MetaData,Table,Column,Integer,String
-
+import graphene
+from flask_cors import CORS,cross_origin
+from flask_graphql import GraphQLView
 app=Flask(__name__)
 
 engine=create_engine("sqlite:///models.db",echo=True)
@@ -17,6 +19,50 @@ Column("modelExtens",String)
 )
 
 meta.create_all(engine)
+
+class Models(graphene.ObjectType):
+	id=graphene.Int()
+	modelName=graphene.String()
+	username=graphene.String()
+	repo=graphene.String()
+	path=graphene.String()
+	modelexe=graphene.String()
+
+class Query(graphene.ObjectType):
+	modellist=graphene.List(Models)
+
+	def resolve_modellist(root,info):
+		conn=engine.connect()
+		sel=models.select()
+		res=conn.execute(sel)
+		lst=[]
+		for i in res:
+			print(i)
+			lst.append(Models(id=i[0],modelName=i[1],username=i[2],repo=i[3],path=i[4],modelexe=i[5]))
+		return lst
+
+
+schema=graphene.Schema(query=Query)
+
+result=schema.execute('''
+{
+modellist{
+	modelName
+}
+}
+'''
+)
+print(result.data)
+
+
+CORS(app, allow_headers=['Content-Type'])
+
+app.add_url_rule('/graphql',
+                 view_func=GraphQLView.as_view(
+                     'graphql',
+                     schema=schema,
+                     graphiql=True,
+                 ))
 
 @app.route("/")
 def index():
