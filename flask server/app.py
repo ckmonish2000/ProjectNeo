@@ -61,20 +61,43 @@ class CreateModel(graphene.Mutation):
 		return CreateModel(ok=True,create_model=create_model)
 
 
+class DeleteModel(graphene.Mutation):
+	class Arguments:
+		id=graphene.Int()
+	
+	deleted_model_details=graphene.Field(Models)
+	ok=graphene.Boolean()
+	
+	def mutate(root,info,id):
+		conn=engine.connect()
+		sel=models.select().where(models.c.id==id)
+		result=conn.execute(sel)
+		x=None
+		for i in result:
+			print(i)
+			x=Models(id=i[0],modelName=i[1],username=i[2],repo=i[3],path=i[4],modelexe=i[5])
+		print(x.modelName)
+		dele=models.delete().where(models.c.id==id)
+		conn.execute(dele)
+		
+		return DeleteModel(ok=True,deleted_model_details=x)
+
+
 class Mutations(graphene.ObjectType):
 	createModel=CreateModel.Field()
+	deleteModel=DeleteModel.Field()
 
 schema=graphene.Schema(query=Query,mutation=Mutations)
 
-result=schema.execute('''
-{
-modellist{
-	modelName
-}
-}
-'''
-)
-print(result.data)
+# result=schema.execute('''
+# {
+# modellist{
+# 	modelName
+# }
+# }
+# '''
+# )
+# print(result.data)
 
 
 CORS(app, allow_headers=['Content-Type'])
