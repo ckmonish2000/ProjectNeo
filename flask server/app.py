@@ -204,3 +204,43 @@ def delete(id,vue):
 
 if __name__=="__main__":
     app.run(debug=True)
+
+
+# for demo
+'''
+
+query lst{
+  modellist{
+    id
+    modelName
+    username
+    repo
+    path
+    modelexe
+  }
+}
+
+
+mutation test{
+  createModel(modelName: "skullTest",username: "ckmonish2000",repo: "assets",path: "/scene.gltf",modelexe: "gltf"){
+    createModel{
+      
+      modelName
+    }
+  }
+}
+
+
+mutation del{
+  deleteModel(id:3){
+    ok
+    deletedModelDetails{
+      id
+      modelName
+    }
+  }
+}
+
+
+
+'''
