@@ -16,4 +16,4 @@ promise==2.3
 Rx==1.6.1
 six==1.16.0
 SQLAlchemy==1.4.31
-Werkzeug==2.0.3
+Werkzeug==2.2.3
